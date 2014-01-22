@@ -1,0 +1,16 @@
+{
+  "name": "supermarket-barcodes",
+  "version": "0.0.0",
+  "description": "generate austrian supermarket club card barcodes",
+  "main": "dist/barcodes.js",
+  "author": "Stephan Bönnemann",
+  "license": "MIT",
+  "scripts": {
+    "prepublish": "./node_modules/grunt-cli/bin/grunt"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-cli": "~0.1.11",
+    "grunt-contrib-coffee": "~0.8.2"
+  }
+}
