@@ -19,3 +19,7 @@ npm install
 npm install -g grunt-cli
 grunt
 ```
+
+## Attribution
+
+The code is based on [nocard.info](https://nocard.info/).
