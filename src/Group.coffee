@@ -1,16 +1,24 @@
 class Group
-  constructor: (@customerID)->
+  constructor: (@customerID) ->
+    
     # initialize w/ prefix and random customerID
-    if not @customerID then @customerID = @_getRandomInt @min, @max
+    unless @customerID
+      @customerID = @_getRandomInt @min, @max
+    
     @code = @vendor + @customerID
     @checkSum = 0
 
-    #  UPC-A check digit algorithm
+    # UPC-A check digit algorithm
     for digit in @code
       # to Int
       digit = digit-0
+    
       # odd*3 + even
-      if digit % 2 then @checkSum += (digit * 3 ) else @checkSum += digit
+      @checkSum += if digit % 2
+        digit * 3 
+      else
+        digit
+    
     @checkSum = 10 - @checkSum % 10
     @code += @checkSum
 
